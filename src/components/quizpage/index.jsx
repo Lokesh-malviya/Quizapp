@@ -7,7 +7,7 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [visitedQuestions, setVisitedQuestions] = useState(Array(15).fill(false));
   const [selectedOptions, setSelectedOptions] = useState(Array(15).fill(null));
-  const [timer, setTimer] = useState(30 * 60);
+  const [timer, setTimer] = useState(60);
   const userId = useSelector((state) => state.user);
   const navigate = useNavigate();
   useEffect(() => {
@@ -82,7 +82,10 @@ const Quiz = () => {
 
         // Store the new timer value in local storage
         localStorage.setItem('quizTimer', newTimer.toString());
-
+        if (newTimer === 0) {
+          // Timer has reached 0, automatically submit the test
+          handleSubmit();
+        }
         return newTimer;
       });
     }, 1000);
