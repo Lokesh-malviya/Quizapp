@@ -1,0 +1,117 @@
+.white__board{
+    background-color:#fff;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1.2fr 0.6fr;
+    justify-items: start;
+    align-items: center;
+}
+.left__ques{
+    margin-left:3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+}
+.head_ques{
+    font-size:2rem;
+    font-weight: bold;
+}
+.ques{
+    font-size:1.2rem;
+ 
+}
+.surround{
+    padding : 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 2px solid #007BFD;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 53rem;
+    margin-left: 2rem;
+
+}
+.option{
+    padding : 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 54rem;
+    cursor: pointer;
+}
+.selected{
+    background-color: green;
+    color: #fff;
+    
+
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 56.5rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    
+}
+.prev,.next{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.question-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 20px;
+}
+.question-number{
+    padding:1.4rem;
+    border-radius:100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #C4C4C4;
+    font-weight: bold;
+    cursor: pointer;
+}
+.visited{
+    background-color: #FFAAAF;
+    color: #fff;
+
+}
+.attempted{
+    background-color: #AABDFF;
+    color: #fff;
+}
+.right__ques{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-weight:bold;
+    gap: 2rem;
+}
+.timer{
+    padding:1.2rem;
+    background-color: #CCE5FF;
+    color: #25558B;
+
+}
+.times{
+    background-color: #343A40;
+    color: #fff;
+    font-weight:bold;
+    padding: 0.4rem;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.submit-button{
+    
+    background-color: rgb(247,123,77);
+    color: #fff;
+}
