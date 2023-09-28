@@ -125,7 +125,7 @@ const Quiz = () => {
     <div>
     
 
-      {quizData ? (
+      {quizData && userId != null ? (
         <div className="white__board">
           <div className="left__ques">
             <div className="surround">
@@ -172,7 +172,14 @@ const Quiz = () => {
           </div>
         </div>
       ) : (
-        <p>Loading...</p>
+
+          userId == null ? 
+            navigate("/")
+          :
+          
+            <p>Loading...</p>
+          
+        
       )}
     </div>
   );

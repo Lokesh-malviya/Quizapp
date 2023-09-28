@@ -1,0 +1,17 @@
+.question{
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+
+.att{
+    padding: 1.2rem;
+    background-color: #AABDFF;
+    color: #fff;
+}
+.ntatt{
+    padding: 1.2rem;
+    background-color: #FFAAAF;
+    color: #fff;
+}

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-
+import './index.css'
 const UserData = () => {
-    const userId = useSelector((state) => state.user);
+  const userId = useSelector((state) => state.user);
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -11,21 +11,18 @@ const UserData = () => {
     fetch('http://localhost:3000/email')
       .then((response) => response.json())
       .then((data) => {
-        // Find the user data with email "LOKSH"
-        /* const userDataWithEmail = data.user.find((item) => item.email === userId); */
         const foundUser = data.find((user) => user.user === userId);
-        console.log(foundUser);
         if (foundUser) {
           setUserData(foundUser);
         }
-        
+
         setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching user data:', error);
         setLoading(false);
       });
-  }, []);
+  }, [userId]);
 
   return (
     <div>
@@ -34,13 +31,31 @@ const UserData = () => {
       ) : (
         userData ? (
           <div>
-            <h2>User Data</h2>
-            <p>Email: {userData.email}</p>
-            <p>ID: {userData.id}</p>
-            {/* You can add additional rendering for other data fields */}
+            {userData.data.map((question) => (
+              <div key={question.id} className="question">
+                <p className={userData.selectedOptions[question.id - 1] === null ? 'ntatt' : 'att'}>
+                  {userData.selectedOptions[question.id - 1] === null
+                    ? 'Not Attempted'
+                    : 'Attempted'}
+                </p>
+                <p>{question.question}</p>
+                {question.options.map((option, index) => (
+                  <div
+                    key={index}
+                    style={{
+                      backgroundColor: option === question.correct_answer ? 'green' : option === userData.selectedOptions[question.id - 1] ? 'red' : 'white',
+                      padding:'1.2rem'
+                    }}
+                  >
+                    {option}
+                  </div>
+                ))}
+
+              </div>
+            ))}
           </div>
         ) : (
-          <p>User data not found.{console.log(userId)}</p>
+          <p>User data not found.</p>
         )
       )}
     </div>
