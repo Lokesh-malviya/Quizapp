@@ -8,7 +8,7 @@
     align-items: center;
 }
 .left__ques{
-    margin-left:3rem;
+    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -95,6 +95,7 @@ ul{
     align-items: flex-end;
     font-weight:bold;
     gap: 2rem;
+    
 }
 .timer{
     padding:1.2rem;
@@ -114,4 +115,98 @@ ul{
     
     background-color: rgb(247,123,77);
     color: #fff;
+    margin-bottom: 1.3rem;
 }
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 1240px) {
+ 
+.white__board{
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    gap: 3.5rem;
+    justify-items: center;
+}
+.left__ques{
+    margin-top:3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.question-grid{
+    
+    grid-template-columns: repeat(10, 1fr);
+    
+}
+.surround{
+    padding: 1.2rem;
+    width: 44rem;
+}
+.head_ques{
+    font-size:1.2rem;
+}
+.ques{
+    font-size:0.8rem;
+}
+.option,.buttons{
+    
+    width: 44rem;
+   
+}
+
+}
+
+@media screen and (max-width: 992px) {
+    .question-grid{
+    
+        grid-template-columns: repeat(6, 1fr);
+        
+    }
+    
+}
+
+/* For medium devices */
+@media screen and (max-width: 800px) {
+ /*  body {
+    margin: 0 0 var(--header-height) 0;
+  } */
+  .question-grid{
+    
+    grid-template-columns: repeat(4, 1fr);
+    
+}
+  .surround{
+    padding: 1.2rem;
+    width: 30rem;
+}
+.option,.buttons{
+    
+    width: 30rem;
+   
+}
+
+}
+
+@media screen and (max-width: 580px) {
+    .question-grid{
+    
+        grid-template-columns: repeat(3, 1fr);
+        
+    }
+      .surround{
+        padding: 1.2rem;
+        width: 17rem;
+    }
+    .option,.buttons{
+        
+        width: 17rem;
+       
+    }
+}
+
+/* For small devices */
+@media screen and (max-width: 400px) {
+  
+}
+

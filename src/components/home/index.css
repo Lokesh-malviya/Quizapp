@@ -24,3 +24,55 @@
 .headline{
     font-size: 1.3rem;
 }
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 992px) {
+ 
+
+    
+  }
+  
+  /* For medium devices */
+  @media screen and (max-width: 768px) {
+   /*  body {
+      margin: 0 0 var(--header-height) 0;
+    } */
+    
+  
+  }
+  
+  @media screen and (max-width: 580px) {
+    .white__box{
+        width:24rem;
+        height:24rem;
+       
+    }
+    .effect{
+        height: 3rem;
+        width: 17rem;
+        
+    }
+  }
+  
+  /* For small devices */
+  @media screen and (max-width: 400px) {
+    .white__box{
+        width:20rem;
+        height:20rem;
+       
+    }
+    .effect{
+        height: 3rem;
+        width: 15rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        
+    }
+    .headline{
+        font-size: 1rem;
+    }
+  }
+  
+  
