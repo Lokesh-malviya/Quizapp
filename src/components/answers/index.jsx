@@ -8,7 +8,7 @@ const UserData = () => {
 
   useEffect(() => {
     // Make an API call to fetch user data
-    fetch('http://localhost:3000/email')
+    fetch('https://quiz-leyt.onrender.com/email')
       .then((response) => response.json())
       .then((data) => {
         const foundUser = data.find((user) => user.user === userId);

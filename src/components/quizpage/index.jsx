@@ -7,7 +7,7 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [visitedQuestions, setVisitedQuestions] = useState(Array(15).fill(false));
   const [selectedOptions, setSelectedOptions] = useState(Array(15).fill(null));
-  const [timer, setTimer] = useState(60);
+  const [timer, setTimer] = useState(30*60);
   const userId = useSelector((state) => state.user);
   const navigate = useNavigate();
   useEffect(() => {
@@ -103,7 +103,7 @@ const Quiz = () => {
     const answers = selectedOptions;
 
     // Send a POST request to your server with the answers
-    fetch('http://localhost:3000/email', {
+    fetch('https://quiz-leyt.onrender.com/email', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
